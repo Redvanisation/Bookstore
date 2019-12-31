@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BookForm />
+        {/* <BookForm /> */}
         <BookList />
       </div>
     )
