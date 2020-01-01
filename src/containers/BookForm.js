@@ -1,5 +1,9 @@
 /* eslint-disable arrow-parens */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions/index';
+import makeId from '../helpers/helpers';
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -20,7 +24,9 @@ class BookForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+    const book = { ...this.state, bookId: makeId() };
+    const { createBook } = this.props;
+    createBook(book);
   }
 
 
@@ -52,4 +58,12 @@ class BookForm extends Component {
   }
 }
 
-export default BookForm;
+const mapDispatchToProps = (dispatch) => ({
+  createBook: book => dispatch(createBook(book)),
+});
+
+BookForm.propTypes = {
+  createBook: PropTypes.instanceOf(Function).isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(BookForm);

@@ -5,9 +5,9 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import generalReducer from './reducers/index';
+import makeId from './helpers/helpers';
 import './style/main.scss';
 
-const makeId = () => Math.floor(Math.random() * 10);
 
 const initialState = {
   books: [
