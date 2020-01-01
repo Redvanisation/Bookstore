@@ -21,6 +21,11 @@ const initialState = {
       title: 'Roo',
       category: 'Horror',
     },
+    {
+      bookId: makeId(),
+      title: 'Gone with the wind',
+      category: 'Romance',
+    },
   ],
 };
 
