@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+/* eslint-disable react/forbid-prop-types */
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Book extends Component {
-	render() {
-		const {bookId, title, category } = this.props.book;
-		return (
-			<tr>
-				<td>{bookId}</td>
-				<td>{title}</td>
-				<td>{category}</td>
-			</tr>
-		);
-	}
-}
+const Book = ({ book }) => (
+  <tr>
+    <td>{book.bookId}</td>
+    <td>{book.title}</td>
+    <td>{book.category}</td>
+  </tr>
+);
+
+Book.defaultProps = {
+  book: {},
+};
+
+Book.propTypes = {
+  book: PropTypes.object,
+};
 
 export default Book;

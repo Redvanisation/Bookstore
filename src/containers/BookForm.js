@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import Book from '../components/Book';
+/* eslint-disable arrow-parens */
+import React from 'react';
 
-class BookForm extends Component {
-  render() {
-    return(
-      <div>
-        <input type="text" placeholder="Book Title"/>
-        <select name="category">
-          <option value="action" selected>action</option> 
-          <option value="biography">biography</option>
-          <option value="history">history</option>
-          <option value="horror">horror</option>
-          <option value="kids">kids</option>
-          <option value="learning">learning</option>
-          <option value="sci-fi">sci-fi</option>
-        </select>
-      </div>
-    );
-  }
-}
+const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const BookForm = () => (
+  <form>
+    <input type="text" placeholder="Book Title" />
+    <select name="category">
+      {categories.map(category => (
+        <option
+          key={category}
+          value={category}
+          defaultValue
+        >
+          {category}
+        </option>
+      ))}
+    </select>
+    <input type="submit" value="submit" />
+  </form>
+);
+
+export default BookForm;
