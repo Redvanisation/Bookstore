@@ -35,26 +35,13 @@ class BookList extends Component {
     return (
       <div>
         <CategoryFilter handleFilterChange={this.handleFilterChange} />
-        <div>{filter}</div>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>title</th>
-              <th>category</th>
-              <th>delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredBooks.map(book => (
-              <Book
-                key={book.bookId}
-                book={book}
-                handleRemoveBook={() => this.handleRemoveBook(book)}
-              />
-            ))}
-          </tbody>
-        </table>
+        {filteredBooks.map(book => (
+          <Book
+            key={book.bookId}
+            book={book}
+            handleRemoveBook={() => this.handleRemoveBook(book)}
+          />
+        ))}
       </div>
     );
   }

@@ -60,3 +60,45 @@ body {
   display: flex;
   margin-top: 5px;
 }
+
+.bookItem{
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
+  display: flex;
+  border: 1px solid $color-gray-light;
+  width: 80%;
+  margin: 1rem auto;
+  background-color: $color-white;
+  justify-content: space-between;
+  &__leftPanel{
+    &--category{
+      color: $color-gray-category;
+      font-family: $font-montserrat;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    &--title{
+      color: $color-black;
+      font-family: $font-roboto;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  &__removeButton{
+    padding-top: 1.5rem;
+    padding-left: 5rem;
+    border-left: 1.5px solid rgba($color-gray-light, 0.6);
+    &--button{
+      background-color: $color-blue-buttons;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      color: rgba($color-white, 0.5);
+      text-transform: uppercase;
+      font-size: 8px;
+      font-family: $font-roboto;
+      font-weight: 300;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+}
