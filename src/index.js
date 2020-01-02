@@ -12,7 +12,7 @@ const initialState = {
     {
       bookId: makeId(),
       title: 'React',
-      category: 'action',
+      category: 'Action',
     },
     {
       bookId: makeId(),

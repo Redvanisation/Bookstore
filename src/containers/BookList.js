@@ -9,10 +9,6 @@ import CategoryFilter from '../components/CategoryFilter';
 class BookList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      filter: '',
-    };
-
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
@@ -24,18 +20,23 @@ class BookList extends Component {
 
   handleFilterChange(filter) {
     const { changeFilter } = this.props;
-    const theFilter = changeFilter(filter);
-    this.setState({
-      filter: theFilter,
-    });
-    console.log(this.state.filter);
+    console.log(`filter: ${filter}`);
+    changeFilter(filter);
   }
 
   render() {
-    const { books } = this.props;
+    const { books, filter } = this.props;
+    let filteredBooks;
+    if (filter === 'All') {
+      filteredBooks = books;
+    } else {
+      filteredBooks = books.filter(book => book.category === filter);
+    }
+
     return (
       <div>
         <CategoryFilter handleFilterChange={this.handleFilterChange} />
+        <div>{filter}</div>
         <table>
           <thead>
             <tr>
@@ -46,7 +47,7 @@ class BookList extends Component {
             </tr>
           </thead>
           <tbody>
-            {books.map(book => (
+            {filteredBooks.map(book => (
               <Book
                 key={book.bookId}
                 book={book}
@@ -62,6 +63,7 @@ class BookList extends Component {
 
 const mapStateToProps = state => ({
   books: state.books,
+  filter: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
