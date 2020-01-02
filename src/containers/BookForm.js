@@ -12,7 +12,7 @@ class BookForm extends Component {
     super();
     this.state = {
       title: '',
-      category: '',
+      category: 'Action',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,11 +27,11 @@ class BookForm extends Component {
     const book = { ...this.state, bookId: makeId() };
     const { createBook } = this.props;
     createBook(book);
+    this.setState({ title: '', category: 'Action' });
   }
 
-
   render() {
-    const { category } = this.state;
+    const { category, title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -39,9 +39,10 @@ class BookForm extends Component {
           name="title"
           placeholder="Book Title"
           onChange={this.handleChange}
-          onBlur={this.handleChange}
+          value={title}
+          required
         />
-        <select name="category" value={category} onChange={this.handleChange} onBlur={this.handleChange}>
+        <select name="category" required value={category} onChange={this.handleChange}>
           {categories.map(catg => (
             <option
               key={catg}
