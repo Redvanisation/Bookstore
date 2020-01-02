@@ -54,6 +54,7 @@ body {
   letter-spacing: -.15px;
   color: $color-gray-selections;
   width: 200px;
+  outline: none;
 }
 
 .margin-top {
@@ -87,18 +88,63 @@ body {
     padding-top: 1.5rem;
     padding-left: 5rem;
     border-left: 1.5px solid rgba($color-gray-light, 0.6);
-    &--button{
-      background-color: $color-blue-buttons;
-      border: none;
-      padding: 0.5rem 1.5rem;
-      color: rgba($color-white, 0.5);
-      text-transform: uppercase;
-      font-size: 8px;
-      font-family: $font-roboto;
-      font-weight: 300;
-      border-radius: 2px;
-      letter-spacing: 1px;
-    }
+  }
+}
+
+.btn {
+  background-color: $color-blue-buttons;
+  border: none;
+  padding: .6rem 2rem;
+  color: rgba($color-white, 0.7);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: $font-roboto;
+  font-weight: 300;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.bookForm {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin: 3rem auto;
+  width: 80%;
+  border-top: 2px solid $color-gray-light;
+  &__title {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-family: $font-montserrat;
+    font-size: 600;
+    color: $color-gray-category;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  &__input {
+    width: 65%;
+    margin-right: 2rem;
+    font-size: 16px;
+    border-radius: 2px;
+    padding: .5rem;
+    border: 1px solid $color-gray-light;
+    color: $color-gray-category;
+    font-family: $font-montserrat;
+    outline: none;
+  }
+  &__selection {
+    margin-right: 2rem;
+    height: 35px;
   }
 
 }

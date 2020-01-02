@@ -8,7 +8,7 @@ const Book = ({ book, handleRemoveBook }) => (
       <div className="bookItem__leftPanel--title">{book.title}</div>
     </div>
     <div className="bookItem__removeButton">
-      <button className="bookItem__removeButton--button" type="button" onClick={handleRemoveBook}>Remove Book</button>
+      <button className="bookItem__removeButton--button btn" type="button" onClick={handleRemoveBook}>Remove Book</button>
     </div>
   </div>
 );
