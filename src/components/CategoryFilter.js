@@ -17,11 +17,17 @@ class CategoryFilter extends Component {
   render() {
     const filters = ['All', ...categories()];
     return (
-      <select onChange={this.handleChange}>
-        {filters.map(item => (
-          <option key={item} value={item}>{item}</option>
-        ))}
-      </select>
+      <div className="navbar">
+        <h2 className="navbar__title">Bookstore CMS</h2>
+        <div className="margin-top">
+          <h3 className="navbar__title2">Books</h3>
+          <select className="selection-box" onChange={this.handleChange}>
+            {filters.map(item => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+      </div>
     );
   }
 }
