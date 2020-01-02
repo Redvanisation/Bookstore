@@ -1,8 +1,8 @@
+/* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { categories } from '../helpers/helpers';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class CategoryFilter extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ class CategoryFilter extends Component {
     const filters = ['All', ...categories()];
     return (
       <select onChange={this.handleChange}>
-        {filters.map((item) => (
+        {filters.map(item => (
           <option key={item} value={item}>{item}</option>
         ))}
       </select>
