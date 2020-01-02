@@ -20,7 +20,6 @@ class BookList extends Component {
 
   handleFilterChange(filter) {
     const { changeFilter } = this.props;
-    console.log(`filter: ${filter}`);
     changeFilter(filter);
   }
 
@@ -79,6 +78,7 @@ BookList.propTypes = {
       category: PropTypes.string,
     }).isRequired,
   ).isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.instanceOf(Function).isRequired,
   changeFilter: PropTypes.instanceOf(Function).isRequired,
 };
