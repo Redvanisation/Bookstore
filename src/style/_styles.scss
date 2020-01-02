@@ -115,6 +115,10 @@ body {
   transform: translateY(-1px);
 }
 
+.formContainer{
+  display: flex;
+}
+
 .bookForm {
   text-align: center;
   padding-top: 4rem;
@@ -132,7 +136,7 @@ body {
     text-transform: uppercase;
   }
   &__input {
-    width: 65%;
+    flex-grow: 4;
     margin-right: 2rem;
     font-size: 16px;
     border-radius: 2px;
@@ -143,8 +147,13 @@ body {
     outline: none;
   }
   &__selection {
+    flex-grow: 1;
     margin-right: 2rem;
     height: 35px;
+    
+  }
+  &__submit {
+    flex-grow: 1;
   }
 
 }
