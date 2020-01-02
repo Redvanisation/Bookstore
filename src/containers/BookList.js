@@ -1,5 +1,5 @@
-  /* eslint-disable arrow-parens */
-/* eslint-disable react/forbid-prop-types */
+/* eslint-disable arrow-parens */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -31,7 +31,13 @@ class BookList extends Component {
           </tr>
         </thead>
         <tbody>
-          {books.map(book => <Book key={book.bookId} book={book} handleRemoveBook={() => this.handleRemoveBook(book)} />)}
+          {books.map(book => (
+            <Book
+              key={book.bookId}
+              book={book}
+              handleRemoveBook={() => this.handleRemoveBook(book)}
+            />
+          ))}
         </tbody>
       </table>
     );
@@ -51,7 +57,7 @@ BookList.defaultProps = {
 };
 
 BookList.propTypes = {
-  books: PropTypes.array,
+  books: PropTypes.instanceOf(Array),
   removeBook: PropTypes.instanceOf(Function).isRequired,
 };
 
