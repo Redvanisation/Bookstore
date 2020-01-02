@@ -3,13 +3,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { removeBook } from '../actions/index';
+import { removeBook, changeFilter } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
 class BookList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      filter: '',
+    };
+
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   handleRemoveBook(book) {
@@ -17,11 +22,20 @@ class BookList extends Component {
     removeBook(book);
   }
 
+  handleFilterChange(filter) {
+    const { changeFilter } = this.props;
+    const theFilter = changeFilter(filter);
+    this.setState({
+      filter: theFilter,
+    });
+    console.log(this.state.filter);
+  }
+
   render() {
     const { books } = this.props;
     return (
       <div>
-        <CategoryFilter />
+        <CategoryFilter handleFilterChange={this.handleFilterChange} />
         <table>
           <thead>
             <tr>
@@ -52,6 +66,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(removeBook(book)),
+  changeFilter: filter => dispatch(changeFilter(filter)),
 });
 
 BookList.propTypes = {
@@ -63,6 +78,7 @@ BookList.propTypes = {
     }).isRequired,
   ).isRequired,
   removeBook: PropTypes.instanceOf(Function).isRequired,
+  changeFilter: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
