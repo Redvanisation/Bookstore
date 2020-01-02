@@ -25,6 +25,7 @@ const initialState = {
       category: 'Romance',
     },
   ],
+  filter: ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
 };
 
 const store = createStore(generalReducer, initialState);
