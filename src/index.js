@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import generalReducer from './reducers/index';
-import makeId from './helpers/helpers';
+import { makeId } from './helpers/helpers';
 import Display from './components/Display';
 import './style/main.scss';
 
@@ -25,7 +25,6 @@ const initialState = {
       category: 'Romance',
     },
   ],
-  filter: ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
 };
 
 const store = createStore(generalReducer, initialState);

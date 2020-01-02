@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions/index';
-
+import CategoryFilter from '../components/CategoryFilter';
 
 class BookList extends Component {
   constructor(props) {
@@ -20,25 +20,28 @@ class BookList extends Component {
   render() {
     const { books } = this.props;
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>title</th>
-            <th>category</th>
-            <th>delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(book => (
-            <Book
-              key={book.bookId}
-              book={book}
-              handleRemoveBook={() => this.handleRemoveBook(book)}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <CategoryFilter />
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>title</th>
+              <th>category</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {books.map(book => (
+              <Book
+                key={book.bookId}
+                book={book}
+                handleRemoveBook={() => this.handleRemoveBook(book)}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
