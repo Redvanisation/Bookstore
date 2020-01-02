@@ -1,10 +1,8 @@
-/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './components/App';
 import generalReducer from './reducers/index';
+import Display from './components/Display';
 import './style/main.scss';
 
 const makeId = () => Math.floor(Math.random() * 10);
@@ -21,14 +19,17 @@ const initialState = {
       title: 'Roo',
       category: 'Horror',
     },
+    {
+      bookId: makeId(),
+      title: 'Gone with the wind',
+      category: 'Romance',
+    },
   ],
 };
 
 const store = createStore(generalReducer, initialState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Display store={store} />,
   document.querySelector('#root'),
 );

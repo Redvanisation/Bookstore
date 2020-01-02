@@ -1,5 +1,4 @@
 /* eslint-disable arrow-parens */
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -24,12 +23,14 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-BookList.defaultProps = {
-  books: [],
-};
-
 BookList.propTypes = {
-  books: PropTypes.array,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      category: PropTypes.string,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default connect(mapStateToProps)(BookList);
