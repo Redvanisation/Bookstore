@@ -1,13 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import generalReducer from './reducers/index';
+import Display from './components/Display';
 import './style/main.scss';
 
-const App = () => (
-  <h1>Hello World!</h1>
-);
+const makeId = () => Math.floor(Math.random() * 10);
 
+const initialState = {
+  books: [
+    {
+      bookId: makeId(),
+      title: 'React',
+      category: 'action',
+    },
+    {
+      bookId: makeId(),
+      title: 'Roo',
+      category: 'Horror',
+    },
+    {
+      bookId: makeId(),
+      title: 'Gone with the wind',
+      category: 'Romance',
+    },
+  ],
+};
+
+const store = createStore(generalReducer, initialState);
 
 ReactDOM.render(
-  <App />,
+  <Display store={store} />,
   document.querySelector('#root'),
 );
