@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,12 +10,12 @@ const Book = ({ book, handleRemoveBook }) => (
   </tr>
 );
 
-Book.defaultProps = {
-  book: {},
-};
-
 Book.propTypes = {
-  book: PropTypes.object,
+  book: PropTypes.shape({
+    bookId: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }).isRequired,
   handleRemoveBook: PropTypes.instanceOf(Function).isRequired,
 };
 

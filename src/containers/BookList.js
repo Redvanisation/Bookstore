@@ -1,5 +1,4 @@
 /* eslint-disable arrow-parens */
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -52,12 +51,14 @@ const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(removeBook(book)),
 });
 
-BookList.defaultProps = {
-  books: [],
-};
-
 BookList.propTypes = {
-  books: PropTypes.instanceOf(Array),
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      category: PropTypes.string,
+    }).isRequired,
+  ).isRequired,
   removeBook: PropTypes.instanceOf(Function).isRequired,
 };
 

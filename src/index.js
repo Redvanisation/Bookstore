@@ -1,11 +1,9 @@
-/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './components/App';
 import generalReducer from './reducers/index';
 import makeId from './helpers/helpers';
+import Display from './components/Display';
 import './style/main.scss';
 
 
@@ -32,8 +30,6 @@ const initialState = {
 const store = createStore(generalReducer, initialState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Display store={store} />,
   document.querySelector('#root'),
 );
