@@ -1,0 +1,159 @@
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-background;
+}
+
+.container {
+  // border: 1px solid black;
+  width: 80%;
+  margin: 5rem auto;
+  background-color: $color-primary;
+  box-shadow: 0 2px 5px 2px rgba($color-black, .2);
+}
+
+.navbar {
+  background-color: $color-white;
+  padding: 2rem 1rem;
+  display: flex;
+  font-family: $font-montserrat;
+  border-bottom: 1px solid $color-gray-light;
+
+  &__title {
+    color: $color-blue-buttons;
+    margin-right: 2rem;
+    margin-left: 3rem;
+  }
+  
+  &__title2 {
+    color: $color-black;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-right: 2rem;
+  }
+  
+}
+
+.selection-box {
+  border-radius: 4px;
+  border: 1px solid $color-gray-light;
+  background-color: #fff;
+  font-family: $font-montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -.15px;
+  color: $color-gray-selections;
+  width: 200px;
+  outline: none;
+}
+
+.margin-top {
+  display: flex;
+  margin-top: 5px;
+}
+
+.bookItem{
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
+  display: flex;
+  border: 1px solid $color-gray-light;
+  width: 80%;
+  margin: 1rem auto;
+  background-color: $color-white;
+  justify-content: space-between;
+  &__leftPanel{
+    &--category{
+      color: $color-gray-category;
+      font-family: $font-montserrat;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    &--title{
+      color: $color-black;
+      font-family: $font-roboto;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  &__removeButton{
+    padding-top: 1.5rem;
+    padding-left: 5rem;
+    border-left: 1.5px solid rgba($color-gray-light, 0.6);
+  }
+}
+
+.btn {
+  background-color: $color-blue-buttons;
+  border: none;
+  padding: .6rem 2rem;
+  color: rgba($color-white, 0.7);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: $font-roboto;
+  font-weight: 300;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.formContainer{
+  display: flex;
+}
+
+.bookForm {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin: 3rem auto;
+  width: 80%;
+  border-top: 2px solid $color-gray-light;
+  &__title {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-family: $font-montserrat;
+    font-size: 600;
+    color: $color-gray-category;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  &__input {
+    flex-grow: 4;
+    margin-right: 2rem;
+    font-size: 16px;
+    border-radius: 2px;
+    padding: .5rem;
+    border: 1px solid $color-gray-light;
+    color: $color-gray-category;
+    font-family: $font-montserrat;
+    outline: none;
+  }
+  &__selection {
+    flex-grow: 1;
+    margin-right: 2rem;
+    height: 35px;
+    
+  }
+  &__submit {
+    flex-grow: 1;
+  }
+
+}

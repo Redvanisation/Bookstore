@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import generalReducer from './reducers/index';
-import makeId from './helpers/helpers';
+import { makeId } from './helpers/helpers';
 import Display from './components/Display';
 import './style/main.scss';
 
@@ -12,7 +12,7 @@ const initialState = {
     {
       bookId: makeId(),
       title: 'React',
-      category: 'action',
+      category: 'Action',
     },
     {
       bookId: makeId(),
