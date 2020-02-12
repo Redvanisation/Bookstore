@@ -29,7 +29,7 @@ This project was created by:
 
 # Live Version
 
-You can find the live version of this project [here Bookstore](https://bookstore-cared.herokuapp.com/)
+You can find the live version of this project ###[here Bookstore](https://romantic-jones-35e941.netlify.com/)
 
 # License
 
