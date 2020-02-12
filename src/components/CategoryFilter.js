@@ -19,8 +19,8 @@ class CategoryFilter extends Component {
     return (
       <div className="navbar">
         <h2 className="navbar__title">Bookstore CMS</h2>
-        <div className="margin-top">
-          <h3 className="navbar__title2">Books</h3>
+        <div className="margin-top navbar__categories-div">
+          <h3 className="navbar__categories-div--title2">Books</h3>
           <select className="selection-box" onChange={this.handleChange}>
             {filters.map(item => (
               <option key={item} value={item}>{item}</option>
